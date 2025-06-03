@@ -6,7 +6,6 @@ import com.bell.food.io.FoodResponse;
 import com.bell.food.repository.FoodRepository;
 import com.cloudinary.*;
 import com.cloudinary.utils.ObjectUtils;
-import io.github.cdimascio.dotenv.Dotenv;
 import com.cloudinary.Cloudinary;
 
 
