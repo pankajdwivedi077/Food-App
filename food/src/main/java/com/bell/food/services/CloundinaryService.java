@@ -27,12 +27,13 @@ public class CloundinaryService implements FoodService {
 
   private final FoodRepository foodRepository;
 
-  @Autowired
-  public CloundinaryService(FoodRepository foodRepository){
-      Dotenv dotenv = Dotenv.load();
-      this.cloudinary = new Cloudinary(dotenv.get("CLOUDINARY_URL"));
-      this.foodRepository = foodRepository;
-  }
+@Autowired
+public CloundinaryService(FoodRepository foodRepository) {
+    String cloudinaryUrl = System.getenv("CLOUDINARY_URL");
+    this.cloudinary = new Cloudinary(cloudinaryUrl);
+    this.foodRepository = foodRepository;
+}
+
 
   @Override
   public String uploadFile(MultipartFile imageUrl){
